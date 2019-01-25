@@ -1,0 +1,89 @@
+/* Solarized values from http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/ */
+:root {
+	--base03: #002b36;
+	--base02: #073642;
+	--base01: #586e75;
+	--base00: #657b83;
+	--base0: #839496;
+	--base1: #93a1a1;
+	--base2: #eee8d5;
+	--base3: #fdf6e3;
+	--yellow: #b58900;
+	--orange: #cb4b16;
+	--red: #dc322f;
+	--magenta: #d33682;
+	--violet: #6c71c4;
+	--blue: #268bd2;
+	--cyan: #2aa198;
+	--green: #859900;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: var(--base3);
+	font-family: 'Raleway', sans-serif;
+	color: var(--base0);
+}
+
+#toggle-dark-mode {
+	cursor: pointer;
+	display: block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: var(--base0);
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	text-align: center;
+	margin: 10px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	justify-content: center;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.header {
+	text-align: center;
+}
+
+#greeter {
+
+}
+
+#date {
+	font-weight: 300;
+}
+
+#time {
+	font-weight: 300;
+	font-size: 32pt;
+}
+
+
+/* Dark mode. */
+.dark-mode {
+	background: var(--base03);
+}
+
+/* Helpers. */
+.no-select {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
