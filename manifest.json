@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "Gruvbox New Tab",
+  "description": "Gruvbox themed new tab page.",
+  "version": "1.0",
+  
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}

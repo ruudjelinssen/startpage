@@ -1,89 +1,282 @@
-/* Solarized values from http://www.zovirl.com/2011/07/22/solarized_cheat_sheet/ */
+/* Gruvbox from https://github.com/morhetz/gruvbox/ */
 :root {
-	--base03: #002b36;
-	--base02: #073642;
-	--base01: #586e75;
-	--base00: #657b83;
-	--base0: #839496;
-	--base1: #93a1a1;
-	--base2: #eee8d5;
-	--base3: #fdf6e3;
-	--yellow: #b58900;
-	--orange: #cb4b16;
-	--red: #dc322f;
-	--magenta: #d33682;
-	--violet: #6c71c4;
-	--blue: #268bd2;
-	--cyan: #2aa198;
-	--green: #859900;
+                                /* [dark]     [light]   */
+    --dark0-hard: #1d2021;
+    --dark0: #282828;           /* [bg0]      [fg0]     */
+    --dark0-soft: #32302f; 
+    --dark1: #3c3836;           /* [bg1]      [fg1]     */
+    --dark2: #504945;           /* [bg2]      [fg2]     */
+    --dark3: #665c54;           /* [bg3]      [fg3]     */
+    --dark4: #7c6f64;           /* [bg4]      [fg4]     */
+
+    --gray-245: #928374;        /* [gray]               */
+    --gray-244: #928374;        /*            [gray]    */
+
+    --light0-hard: #f9f5d7;
+    --light0: #fbf1c7;          /* [fg0]      [bg0]     */
+    --light0-soft: #f2e5bc; 
+    --light1: #ebdbb2;          /* [fg1]      [bg1]     */
+    --light2: #d5c4a1;          /* [fg2]      [bg2]     */
+    --light3: #bdae93;          /* [fg3]      [bg3]     */
+    --light4: #a89984;          /* [fg4]      [bg4]     */
+
+    --bright-red: #fb4934;      /* [red]                */
+    --bright-green: #b8bb26;    /* [green]              */
+    --bright-yellow: #fabd2f;   /* [yellow]             */
+    --bright-blue: #83a598;     /* [blue]               */
+    --bright-purple: #d3869b;   /* [purple]             */
+    --bright-aqua: #8ec07c;     /* [aqua]               */
+    --bright-orange: #fe8019;   /* [orange]             */
+
+    --neutral-red: #cc241d; 
+    --neutral-green: #98971a; 
+    --neutral-yellow: #d79921;
+    --neutral-blue: #458588;
+    --neutral-purple: #b16286;
+    --neutral-aqua: #689d6a;
+    --neutral-orange: #d65d0e;
+
+    --faded-red: #9d0006;       /*            [red]     */
+    --faded-green: #79740e;     /*            [green]   */
+    --faded-yellow: #b57614;    /*            [yellow]  */
+    --faded-blue: #076678;      /*            [blue]    */
+    --faded-purple: #8f3f71;    /*            [purple]  */
+    --faded-aqua: #427b58;      /*            [aqua]    */
+    --faded-orange: #af3a03;    /*            [orange]  */
+}
+
+* {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;         
 }
 
 html, body {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-	background: var(--base3);
-	font-family: 'Raleway', sans-serif;
-	color: var(--base0);
+    background: var(--light0);
+    color: var(--dark0);
+}
+
+body, input {
+    font-family: 'Raleway', sans-serif;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;    
 }
 
 #toggle-dark-mode {
-	cursor: pointer;
-	display: block;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background-color: var(--base0);
-	position: absolute;
-	right: 5px;
-	bottom: 5px;
-	text-align: center;
-	margin: 10px;
+    cursor: pointer;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--dark4);
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    text-align: center;
+    margin: 10px;
 }
 
 .container {
-	display: flex;
-	align-items: center;
-	flex-direction: row;
-	justify-content: center;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-flow: row wrap;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+    max-width: 960px;
+    padding: 30px;
 }
 
 .header {
-	text-align: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    flex: 1;
 }
 
-#greeter {
+.clock {
+    font-weight: 300;
+    font-size: 48pt;
+    margin: 0;
+}
+
+.date {
+    font-weight: 300;
+    font-size: 18pt;
+    margin: 0;
+}
+
+
+.search-input-wrapper {
+    width: 100%;
+}
+
+.search-input {
+    border: 1px solid var(--light2);
+    background: var(--light1);
+    color: var(--dark4);
+    font-size: 14pt;
+    padding: 10px;
+    width: 100%;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.shortcut-sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    width: calc(100% + 16px);
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: 15px;
+}
+
+.shortcut-section-wrapper {
+    width: 33.333%;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 15px;
+}
+
+.shortcut-section {
+    width: 100%;
+    background: var(--light2);
+}
+
+.shortcut-section__header {
+    padding: 5px;
+}
+
+.shortcut-section__name {
+    margin: 0;
+    font-size: 11pt;
+}
+
+.shortcut-section__list {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+    width: 100%;
+}
+
+.shortcut-section__shortcut {
 
 }
 
-#date {
-	font-weight: 300;
+.shortcut-section__shortcut--selected,
+.shortcut-section__shortcut:hover {
+    background: var(--light0);
 }
 
-#time {
-	font-weight: 300;
-	font-size: 32pt;
+.shortcut-section__shortcut > a {
+    padding: 5px 5px;
+    color: var(--dark4);
+    text-decoration: none;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
 }
 
+.shortcut-section--blue .shortcut-section__header {
+    background: var(--faded-blue);
+    color: var(--light0);
+}
+
+.shortcut-section--red  .shortcut-section__header {
+    background: var(--faded-red);
+    color: var(--light0);
+    
+}
+
+.shortcut-section--green .shortcut-section__header {
+    background: var(--faded-green);
+    color: var(--light0);
+    
+}
+
+.shortcut-section--aqua .shortcut-section__header {
+    background: var(--faded-aqua);
+    color: var(--light0);
+}
+
+.shortcut-section--purple .shortcut-section__header {
+    background: var(--faded-purple);
+    color: var(--light0);
+}
+
+.shortcut-section--orange .shortcut-section__header {
+    background: var(--faded-orange);
+    color: var(--light0);
+}
+
+.shortcut-section--yellow .shortcut-section__header {
+    background: var(--faded-yellow);
+    color: var(--light0);
+}
 
 /* Dark mode. */
 .dark-mode {
-	background: var(--base03);
+    background: var(--dark0);
+    color: var(--light0);
+}
+
+.dark-mode #toggle-dark-mode {
+    background: var(--light4);
+}
+
+.dark-mode .search-input {
+    border: 1px solid var(--dark2);
+    background: var(--dark1);
+    color: var(--light4);
+}
+
+.dark-mode .shortcut-section {
+    background: var(--dark2);
+}
+
+.dark-mode .shortcut-section__shortcut--selected,
+.dark-mode .shortcut-section__shortcut:hover {
+    background: var(--dark0);
+}
+
+.dark-mode .shortcut-section__shortcut > a {
+    color: var(--light3);
+}
+
+/* Responsiveness */
+@media only screen and (max-width: 700px) {
+    .shortcut-section-wrapper {
+        width: 50%;
+    }
 }
 
 /* Helpers. */
 .no-select {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

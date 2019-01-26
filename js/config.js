@@ -11,9 +11,57 @@ var config = (function() {
 	// Default options
 	var defaultOptions = {
 		darkMode: true,
-		greeter: true,
 		clock: true,
-		date: true
+		date: true,
+		showSeconds: false,
+		shortcutSections: [
+			{
+				name: 'Social',
+				color: 'aqua',
+				shortcuts: [
+					{
+						name: 'Twitter',
+						url: 'https://twitter.com/'
+					},
+					{
+						name: 'Instagram',
+						url: 'https://www.instagram.com/'
+					}
+				]
+			},
+			{
+				name: 'Development',
+				color: 'yellow',
+				shortcuts: [
+					{
+						name: 'Start page',
+						url: '/'
+					},
+					{
+						name: 'Github',
+						url: 'https://github.com/'
+					},
+					{
+						name: 'GitLab',
+						url: 'https://gitlab.com/'
+					}
+				]
+			},
+			{
+				name: 'News & Blogs',
+				color: 'orange',
+				shortcuts: [
+					{
+						name: 'Hacker News',
+						url: 'https://news.ycombinator.com/'
+					},
+					{
+						name: 'Medium',
+						url: 'https://medium.com/'
+					}
+				]
+			}
+		]
 	};
 
 	// Retrieve the options from storage if they exist.

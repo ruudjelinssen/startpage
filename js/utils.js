@@ -1,15 +1,20 @@
 var utils = (function() {
 
+	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	var dayNames =  ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
 	// Get some date information
 	var getDateObject = function () {
 		var now = new Date();
 		return {
 			day: now.getDay(),
+			dayName: dayNames[now.getDay()],
 			date: now.getDate(),
 			month: now.getMonth(),
+			monthName: monthNames[now.getMonth()],
 			year: 1900 + now.getYear(),
-			hour: now.getHours(),
-			minute: now.getMinutes(),
+			hours: now.getHours(),
+			minutes: now.getMinutes(),
 			seconds: now.getSeconds(),
 			milliseconds: now.getMilliseconds()
 		};
@@ -18,9 +23,7 @@ var utils = (function() {
 	// Stringify greeter
 	var greeterString = function () {
 
-		var options = 
-		getDateObject().hour
-	}
+	};
 
 
 	// Merge two objects. 
